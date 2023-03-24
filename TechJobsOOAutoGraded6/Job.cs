@@ -61,7 +61,7 @@ namespace TechJobsOOAutoGraded6
                 JobCoreCompetency.Value = "Data not available";
             }
 
-            return $"\n {Id} \n Name : {Name} \n Employer: {EmployerName} \n Location: {EmployerLocation} \n Position Type: {JobType} \n Core Competency: {JobCoreCompetency} \n";
+            return $"\n ID: {Id} \n Name: {Name} \n Employer: {EmployerName} \n Location: {EmployerLocation} \n Position Type: {JobType} \n Core Competency: {JobCoreCompetency} \n";
         }
 
     }

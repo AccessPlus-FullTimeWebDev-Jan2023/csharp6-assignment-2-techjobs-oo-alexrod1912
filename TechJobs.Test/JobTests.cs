@@ -15,7 +15,7 @@ namespace TechJobs.Tests
 
         Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        Job job5 = new Job("", new Employer(), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job5 = new Job("", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         //Testing Objects
         //initalize your testing objects here
 
@@ -61,14 +61,14 @@ namespace TechJobs.Tests
         [TestMethod] //6
         public void TestToStringContainsCorrectLabelsAndData()
         {
-            Assert.AreEqual(job3.ToString(), $"\n Name : {job3.Name} \n Employer Name: {job3.EmployerName} \n Employer Location: {job3.EmployerLocation} \n Job Type: {job3.JobType} \n Core Competency: {job3.JobCoreCompetency} \n");
+            Assert.AreEqual(job3.ToString(), $"\n ID: {job3.Id} \n Name: {job3.Name} \n Employer: {job3.EmployerName} \n Location: {job3.EmployerLocation} \n Position Type: {job3.JobType} \n Core Competency: {job3.JobCoreCompetency} \n");
 
         }
 
         [TestMethod] //7
         public void TestToStringHandlesEmptyField()
         {
-            Assert.AreEqual(job5.ToString(), $"\n Name : {job5.Name} \n Employer Name: {job5.EmployerName} \n Employer Location: {job5.EmployerLocation} \n Job Type: {job5.JobType} \n Core Competency: {job5.JobCoreCompetency} \n");
+            Assert.AreEqual(job5.ToString(), $"\n ID: {job5.Id} \n Name: {job5.Name} \n Employer: {job5.EmployerName} \n Location: {job5.EmployerLocation} \n Position Type: {job5.JobType} \n Core Competency: {job5.JobCoreCompetency} \n");
 
         }
     }
