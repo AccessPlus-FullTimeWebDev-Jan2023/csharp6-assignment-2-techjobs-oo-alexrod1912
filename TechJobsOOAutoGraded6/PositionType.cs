@@ -13,7 +13,7 @@ namespace TechJobsOOAutoGraded6
             nextId++;
         }
 
-        public PositionType(string value) : this()
+        public PositionType(string value = "Data Not Available") : this()
         {
             Value = value;
         }

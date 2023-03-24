@@ -1,4 +1,7 @@
 ﻿
+using System.Data;
+using System.Xml.Linq;
+
 namespace TechJobs.Tests
 {
 	[TestClass]
@@ -11,6 +14,8 @@ namespace TechJobs.Tests
         Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        Job job5 = new Job("", new Employer(), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         //Testing Objects
         //initalize your testing objects here
 
@@ -42,8 +47,30 @@ namespace TechJobs.Tests
 
         }
 
-    }
+        [TestMethod] //5
+        public void TestToStringStartsAndEndsWithNewLine()
+        {
+            char firstSpace = job3.ToString()[0];
+            string lastSpace = job3.ToString();
+            char lastSpace1 = lastSpace[lastSpace.Length - 1]; 
+            Assert.AreEqual('\n', firstSpace);
+            Assert.AreEqual('\n', lastSpace1);
 
-    
+        }
+
+        [TestMethod] //6
+        public void TestToStringContainsCorrectLabelsAndData()
+        {
+            Assert.AreEqual(job3.ToString(), $"\n Name : {job3.Name} \n Employer Name: {job3.EmployerName} \n Employer Location: {job3.EmployerLocation} \n Job Type: {job3.JobType} \n Core Competency: {job3.JobCoreCompetency} \n");
+
+        }
+
+        [TestMethod] //7
+        public void TestToStringHandlesEmptyField()
+        {
+            Assert.AreEqual(job5.ToString(), $"\n Name : {job5.Name} \n Employer Name: {job5.EmployerName} \n Employer Location: {job5.EmployerLocation} \n Job Type: {job5.JobType} \n Core Competency: {job5.JobCoreCompetency} \n");
+
+        }
+    }
 }
 

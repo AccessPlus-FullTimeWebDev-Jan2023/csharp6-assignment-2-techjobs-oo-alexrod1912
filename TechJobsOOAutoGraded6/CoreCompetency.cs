@@ -15,7 +15,7 @@ namespace TechJobsOOAutoGraded6
             nextId++;
         }
 
-        public CoreCompetency(string v) : this()
+        public CoreCompetency(string v = "Data Not Available") : this()
         {
             Value = v;
         }

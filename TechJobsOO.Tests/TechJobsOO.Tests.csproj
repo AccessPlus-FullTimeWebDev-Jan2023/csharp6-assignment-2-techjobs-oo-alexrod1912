@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TechJobsOOAutoGraded6\TechJobsOOAutoGraded6.csproj" />
     <ProjectReference Include="..\TechJobs.Test\TechJobs.Tests.csproj" />
+    <ProjectReference Include="..\TechJobsOOAutoGraded6\TechJobsOOAutoGraded6.csproj" />
   </ItemGroup>
 </Project>

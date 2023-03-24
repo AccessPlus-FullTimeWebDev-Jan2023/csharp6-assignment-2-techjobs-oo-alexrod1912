@@ -13,15 +13,13 @@ namespace TechJobsOOAutoGraded6
             public PositionType JobType { get; set; }
             public CoreCompetency JobCoreCompetency { get; set; }
 
-        // TODO: Task 3: Add the two necessary constructors.
-
         public Job()
         {
             Id = nextId;
             nextId++;
         }
 
-        public Job(string name, Employer employername, Location employerLocation, PositionType jobtype, CoreCompetency jobCoreCompetency) : this()
+        public Job(string name, Employer employername, Location employerLocation , PositionType jobtype , CoreCompetency jobCoreCompetency ) : this()
         {
             Name = name;
             EmployerName = employername; 
@@ -40,14 +38,31 @@ namespace TechJobsOOAutoGraded6
         {
             return HashCode.Combine(Id);
         }
+        public override string ToString()
+        {
+            if (Name == "" || Name == null)
+            {
+                Name = "Data not available";
+            }
+            if(EmployerName.Value == null || EmployerName.Value == "")
+            {
+                EmployerName.Value = "Data not available";
+            }
+            if (EmployerLocation.Value == null || EmployerLocation.Value == "")
+            {
+                EmployerLocation.Value = "Data not available";
+            }
+            if (JobType.Value == null || JobType.Value == "")
+            {
+                JobType.Value = "Data not available";
+            }
+            if (JobCoreCompetency.Value == null || JobCoreCompetency.Value == "")
+            {
+                JobCoreCompetency.Value = "Data not available";
+            }
 
-        // TODO: Task 3: Generate Equals() and GetHashCode() methods.
-
-
-        // TODO: Task 5: Generate custom ToString() method.
-        //Until you create this method, you will not be able to print a job to the console.
-
-        
+            return $"\n {Id} \n Name : {Name} \n Employer: {EmployerName} \n Location: {EmployerLocation} \n Position Type: {JobType} \n Core Competency: {JobCoreCompetency} \n";
+        }
 
     }
 }
